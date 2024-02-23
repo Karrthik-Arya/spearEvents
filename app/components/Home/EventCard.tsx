@@ -12,20 +12,20 @@ type EventCardProps = {
 }
 
 const EventCard: FC<EventCardProps> = ({ event }) => {
+  console.log(event.groups)
   const navigation = useNavigation<AppStackNavProps>()
   return (
-        <PressableShrink onPress={() => { navigation.navigate('EventScreen', { event }) }}
-          style={{ marginHorizontal: 5, marginVertical: 10, width: '100%', height: 220 }}>
+        <PressableShrink shadow="5" my="2" w="90%" h="200px" onPress={() => { navigation.navigate('EventScreen', { event }) }}>
         <Box overflow="hidden" rounded="2xl" w="full" h="full" shadow="5" bgColor="white">
-            <Image source={event.image} w="full" alt={event.name} h="65%" />
+            <Image source={require('../../assets/Events/event.jpeg')} w="full" alt={event.name} h="65%" />
             <HStack w="full" px="2" justifyContent="space-between" alignItems="center">
               <Text my="1" color="black" fontSize="xl" fontWeight="500">
-                  {event.name}
+                  {event.title}
               </Text>
               <HStack space="1" alignItems="end">
                 <MaterialCIcon name="account-group" size={20} color={'gray'} />
                 <Text color="coolGray.800" fontSize="14" fontWeight="600">
-                  {event.participants}
+                  {10}
                 </Text>
                 <Text color="coolGray.700" fontSize="13">
                   Participants

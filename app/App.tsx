@@ -13,6 +13,7 @@ import {
   SafeAreaView
 } from 'react-native'
 import AppNavigator from './navigators/AppNavigator'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 function App (): JSX.Element {
   const config = {
@@ -22,13 +23,19 @@ function App (): JSX.Element {
     }
   }
 
+  const client = new QueryClient()
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      {/* <AuthProvider projectId="P2cMROBGYbcmPL9LAcILYtMOHYHD"> */}
+      <QueryClientProvider client={client}>
       <NativeBaseProvider config={config}>
         <NavigationContainer>
           <AppNavigator />
         </NavigationContainer>
       </NativeBaseProvider>
+      </QueryClientProvider>
+      {/* </AuthProvider> */}
     </SafeAreaView>
   )
 }

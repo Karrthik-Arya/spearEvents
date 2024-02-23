@@ -13,7 +13,7 @@ const GroupCard: FC<GroupCardProps> = ({ group }) => {
   const { title, host, schedule: events } = group
   const navigation = useNavigation<AppStackNavProps>()
   return (
-        <PressableShrink onPress={() => { navigation.navigate('GroupScreen', { group }) }} w='45%' mx='2' my='2'>
+        <PressableShrink onPress={() => { navigation.navigate('GroupScreen', { group }) }} w='45%' h="180" mx='2' my='2'>
         <Box w="full" bgColor="white" shadow="2" px="2" py="3" rounded="2xl">
 
             <Text color="black" fontSize="17" fontWeight="500" >

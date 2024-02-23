@@ -6,7 +6,17 @@ export type AppStackParamList = {
   'EventScreen': { event: Event }
   'GroupsScreen': { eventId: string }
   'VisitorProfileScreen': { name: string }
+  'MyProfileScreen': undefined
   'GroupScreen': { group: Group }
+  'CreateEventScreen': undefined
+  'CreateGroupScreen': { eventId: string }
+  'GroupJoinedScreen': { groupId: string }
+
+  // public screens
+  'LandingScreen': undefined
+  'InterestsScreen': undefined
+  'DreamsScreen': undefined
+  'AboutScreen': undefined
 }
 
 export type AppStackScreenProps<T extends keyof AppStackParamList> = StackScreenProps<AppStackParamList, T>

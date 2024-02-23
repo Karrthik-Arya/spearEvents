@@ -1,12 +1,13 @@
 import { type ImageSourcePropType } from 'react-native'
 
 export type Event = {
-  name: string
-  image: ImageSourcePropType
+  title: string
+  image: string
   description: string
   location: string
   groups: number
   participants: number
+  eventTime: string
 }
 
 export type Group = {
@@ -15,4 +16,5 @@ export type Group = {
   id: string
   title: string
   schedule: string[]
+  tags?: string[]
 }

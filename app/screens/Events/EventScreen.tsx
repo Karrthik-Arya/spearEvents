@@ -12,7 +12,7 @@ const EventScreen: FC<EventScreenProps> = ({ route, navigation }) => {
   const event = route.params.event
   return (
         <>
-        <Image position="absolute" source={event.image} w="full" h="600" alt="event bg" />
+        <Image position="absolute" source={require('../../assets/Events/event.jpeg')} w="full" h="600" alt="event bg" />
         <Box bg={{
           linearGradient: {
             colors: ['transparent', 'black'],
@@ -32,7 +32,7 @@ const EventScreen: FC<EventScreenProps> = ({ route, navigation }) => {
             <Animated.View entering={BounceInDown}>
             <Box alignItems="center" mt="300" bgColor="coolGray.100" roundedTop="3xl" w="full" minH="600">
               <Text mt="2" textAlign="center" color="black" bold w="80%" fontSize="2xl">
-                {event.name}
+                {event.title}
               </Text>
               <HStack mb="4" space="1">
               <IonIcon name="location" size={20} color={'gray'} />
@@ -56,7 +56,7 @@ const EventScreen: FC<EventScreenProps> = ({ route, navigation }) => {
                 <HStack mt="1" space="1" alignItems="end">
                 <MaterialCIcon name="account-group" size={20} color={'gray'} />
                 <Text color="coolGray.800" fontSize="14" fontWeight="600">
-                  {event.groups}
+                  {2}
                 </Text>
                 <Text color="coolGray.700" fontSize="13">
                   Groups
@@ -71,7 +71,7 @@ const EventScreen: FC<EventScreenProps> = ({ route, navigation }) => {
                 <HStack space="1" mt="1" alignItems="end">
                 <MaterialCIcon name="account-group" size={20} color={'gray'} />
                 <Text color="coolGray.800" fontSize="14" fontWeight="600">
-                  {event.participants}
+                  {10}
                 </Text>
                 <Text color="coolGray.700" fontSize="13">
                   Participants
@@ -80,7 +80,7 @@ const EventScreen: FC<EventScreenProps> = ({ route, navigation }) => {
                 </Box>
               </HStack>
 
-              <PressableShrink mt="4" w="93%" onPress={() => { navigation.navigate('GroupsScreen', { eventId: '1234' }) }}>
+              <PressableShrink mt="4" w="93%" h="50" onPress={() => { navigation.navigate('GroupsScreen', { eventId: '1234' }) }}>
               <Box alignItems="center" justifyContent="center" rounded="full" h="50" shadow="8" bgColor="yellow.500" >
                 <Text color="black" fontSize="18" bold >
                   Count me In!

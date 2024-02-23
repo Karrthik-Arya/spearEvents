@@ -6,7 +6,7 @@ const PressableShrink: FC<ComponentProps<typeof Pressable>> = ({ children, disab
   return <Pressable {...props} disabled={disabled} opacity={disabled ? 0.5 : 1} >
         {({ isPressed }) => {
           return (
-                <Box style={{
+                <Box w="full" h="full" style={{
                   transform: [{ scale: isPressed ? 0.95 : 1 }]
                 }}>
                     {children}
